@@ -4,6 +4,11 @@ function FDM = FDM_implementation(phase,mag,mask,TE)
 
 %This code has been written for 2D images (as used in the paper), but can be subsequently modified for 3D
 
+%Written by Benjamin Tendler - contact benjamin.tendler@ndcn.ox.ac.uk
+
+%%
+%Output corresponds to the frequency difference map
+
 %Inputs are as follows
 %phase  Multi echo gradient echo phase
 %mag    Multi echo gradient echo magnitude
