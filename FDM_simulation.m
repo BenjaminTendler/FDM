@@ -2,9 +2,13 @@
 %This code simulates the FDM signal using the approach in:
 %Tendler, Benjamin C., and Richard Bowtell. "Frequency difference mapping applied to the corpus callosum at 7T." Magnetic resonance in medicine 81.5 (2019): 3017-3031.
 %This code recreates Figure 1 in the paper
+
+%Written by Benjamin Tendler - contact benjamin.tendler@ndcn.ox.ac.uk
+
 %%
 %For the simulation, compartment parameters taken from:
 %Sati, Pascal, et al. "Micro-compartment specific T2? relaxation in the brain." Neuroimage 77 (2013): 268-278. (Table 1 - SCC)
+
 %%
 %Set parameters
 %TEs
@@ -24,11 +28,13 @@ A_3=0.373;
 %Time independent phase offset and average frequency offset
 phi_0=0.5;
 Omega=50;
+
 %%
 %Simulate 3-compartment signal
 S=exp(1i*phi_0).*exp(1i*2*pi*Omega.*TE).*(A_1.*exp(-TE./T2_1).*exp(1i*2*pi*freq_1.*TE)+A_2.*exp(-TE./T2_2).*exp(1i*2*pi*freq_2.*TE)+A_3.*exp(-TE./T2_3).*exp(1i*2*pi*freq_3.*TE));
 %Convert to phase
 pha_s=angle(S);
+
 %%
 %Perform FDM steps
 
@@ -44,6 +50,7 @@ end
 for k=2:size(pha_s_2,2)
     FDM(:,k)=pha_s_2(:,k)/(2*pi*(k-1)*(TE(2)-TE(1)));    
 end       
+
 %%
 %Perform Noise calculation
 %Define mean R2* as equal to 1/30ms
@@ -57,6 +64,7 @@ SNR_1=300;
 for k=3:size(pha_s,2)
     noise(k)=1/(2.*pi.*delta_TE.*SNR_1)*((exp((k-1)*mean_R2*delta_TE)/(k-2))^2+1+((k-1)*exp(mean_R2*delta_TE)/(k-2))^2)^0.5;
 end
+
 %%
 %Plot figures
 %Phase
