@@ -7,7 +7,7 @@ function FDM = FDM_implementation(phase,mag,mask,TE)
 %Inputs are as follows
 %phase  Multi echo gradient echo phase
 %mag    Multi echo gradient echo magnitude
-%mask   Mask corresponding to each echo (used to correct the linear phase variation along read direction
+%mask   Mask corresponding to each echo (used to correct the linear phase variation along read direction)
 %TE     Echo times (in seconds)
 
 %%
