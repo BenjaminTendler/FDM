@@ -1,6 +1,6 @@
 # Frequency Difference Mapping
 This repository contains code to simulate the Frequency Difference Mapping (FDM) signal as described in:
-*Tendler, Benjamin C., and Richard Bowtell. "Frequency difference mapping applied to the corpus callosum at 7T." Magnetic resonance in medicine 81.5 (2019): 3017-3031.*
+*Tendler, Benjamin C., and Richard Bowtell. "Frequency difference mapping applied to the corpus callosum at 7T." Magnetic resonance in medicine 81.5 (2019): 3017-3031. https://doi.org/10.1002/mrm.27626*
 
 Code provided here as follows:
 
